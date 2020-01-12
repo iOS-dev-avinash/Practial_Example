@@ -274,6 +274,10 @@
   2-> Operation Quesue
   
   
+  Operation :-is a abstraction class means you cannot create instance of a that class or it has method decleration not defination.
+  
+  BloackOpreation:-
+  
 Class ViewController:UIViewController {
  
 	viewDidLoad(){
@@ -283,14 +287,31 @@ Class ViewController:UIViewController {
 	
 	if you want to excute task1 along with task2 use concurent queue :excution  controll switching
 	
-	let queue = DispatchQueue.global(qos:.default)
-	queue.async{ [weak self] in 
+	let queue = OprationQueue()
+	let task1 = BlockOpration{[weak self] in
+	self.task1();
 	
-	self.task1()
 	}
-	queue.async{ [weak self] in 
+	let task2 = BlockOpration{[weak self] in
+	self.task2();
 	
-	self.task2()
+	}
+	queue.addOpration(task1)  
+								-> t1 and t2 excute concurently
+	queue.addOpration(task2)
+	
+	
+	// you can add set dependancy
+	
+	task2.addDependancy(task1) // means task1 complete then task2
+	
+	
+	// or you can add completion handler 
+	
+	task1.completionBlock = {
+	
+	print("task1 is completed")
+	
 	}
 	
 	}
@@ -308,6 +329,13 @@ Class ViewController:UIViewController {
 	}
 	}
 	
+	GCD is faster than OperationQueue
+	
+	GCD is more efficent than OperationQueue bacause it takes less excute time 
+	
+	if you want to have dapendancy, or maximum running operation or completion block
+	
+	if you want to  have more controll over the oprations you must go for operation queue.
 	
 	}
 	func task1(){
