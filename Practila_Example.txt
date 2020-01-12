@@ -354,3 +354,82 @@ Class ViewController:UIViewController {
 
 
 
+  * What is Diff Between Swift VC ObectiveC  *
+  
+  1-> simple to read and learn
+  2->Type Safe (no need to declare variable dataType its automatically );
+  3->Less code
+  4->No pointer to confuse
+  5->Option make application crash free and bug free.
+  6->swift Protocall Oriented Programming language .
+  
+  * Whats new in swift 5 *
+  
+  1-> Swift 5 is source compatible with Swift 4.2, but isn’t binary compatibl
+  
+  2-> Swift 4.2 uses escape sequences to represent backslashes and quote marks in strings:
+  
+  Ex:-
+  let escape = "You use escape sequences for \"quotes\"\\\"backslashes\" in Swift 4.2."
+  let multiline = """
+                You use escape sequences for \"\"\"quotes\"\"\"\\\"\"\"backslashes\"\"\"
+                on multiple lines
+                in Swift 4.2.
+                """
+	
+   Swift 5 adds raw strings. You add # at the beginning and end of the string so you can use backslashes and quote marks without issue
+
+  Ex:
+let raw = #"You can create "raw"\"plain" strings in Swift 5."#
+let multiline = #"""
+                You can create """raw"""\"""plain""" strings
+                on multiple lines
+                in Swift 5.
+                """#
+  
+  
+     
+  
+  * What is Optional *
+   
+   optional is holding nil or value;
+   
+   * what is Optional unwraping *
+   
+   ->is a technics to unboxing optional variable value
+   
+    types :- 
+	1 -> implicit Optional unwraping ()
+	2 -> Force unwraping.
+	3 -> Explicit Optional unwraping.
+	
+	
+    * Optional binding *	
+	
+	it is optional unwraping technics
+	1-> if let -> unwraped value in optional binding is accessible with in that block
+	
+	2-> guard optional unwraping technics -> unwraped value in optional binding to the below statements;
+	
+	* Optional changing *	
+	
+	is a process of accessing optional sub property which are again optionals.
+	
+	
+	* nil coalesing operator * 
+	
+	Provide Default Value
+	
+	
+	
+	
+	
+   
+   
+   
+   
+  
+  
+  
+  
+  
