@@ -1,0 +1,229 @@
+
+    * Extensions VS Inheritance *
+	 
+ 1-> Extensions is a process of  adding additional property 
+     and method in an existing class,structure,enum
+
+ 2-> Inheritance is a process of extending the class
+
+ 3->  to use additional functionality in case of Inheritance you must go for the subclass object not the superclass object
+
+ 4-> in case of Extensions by using the same class object to getting additional functionality and overriding is not allowed
+ 
+ 5-> store property is not allowed in Extensions computed property is allowed
+
+ 6-> Extensions is used for segrigate huge class in to small samll picesses 
+ 
+ 
+	* Generics Type *
+	
+ 1-> is a datatypes which is capable of holding any kind of values.
+	Ex:	Array(holds group of ints,string,float )
+		Set(holds group of ints,string,float)
+ 
+
+
+   * Subscripts *
+
+1-> Subscripts are the shortest way or altenative way of accessing elements of collection(Array,set)
+
+
+
+
+        * Closures *
+		
+1-> is a datatypes to hold method or functional	
+2-> closures are self-contained blocks of functionality that can passed around and used in your code
+3-> block of code store in a single varible
+
+		Ex: 
+		let aInt:Int = 10
+		let bInt:Int = 10
+		func add(Int a,Int b)-> Int{
+		 return a+b
+		} 	
+		let res = add(a:10,b:10)
+         
+		In Closures 
+		let addClosure:(Int,Int)->Int = {(a,b)->Int in
+		  
+		  return a+b
+		
+		}
+4 -> The base purpose of closures is for asyncronsally calling something
+
+ like: suppose i hava a fetchdata method to fetching data from webservices assume that it may take  10 sec	if it is taking 10 sec controll should not be wating here it excute rest of code after 10 sec i received the response if response is succes or fail
+
+
+5 -> closures can passed as a argument to a method
+
+6 ->  when we use closures is whenever if you want a block of code to be excuted after some kind of time after getting something after doing something you want to excute that case  we write the closers 
+
+
+
+  * Protocol *
+  
+ 1-> a protocol defines a blueprint of method , properties 
+
+ 2-> the protocol can be adopted by a class,structure,or enumeration to provide an actual implementation of those requirements.
+ 
+ 3-> protocol is a  simpley set of method or rule decleration not implementation
+
+ 
+ 
+ * Design Pattern *
+ 
+ def: Design pattern is used to structuring your project into modules and establishing effective communucation bttween those modules of the application.
+ 
+ 
+ * advantages of Design Pattern *
+1-> scalability ,modulerity ,meantainance,testability.
+
+
+ Types of Design Pattern :-
+  1-> architecture DP 
+   -> is used for segrigate application in to different mofule 
+   -> MVC,MVP,MVVM,VIPER
+   
+  
+  2-> General Design Pattern
+   -> is used to effective or proper  communucation bttween those module
+   -> Singletone,Delegation,Observer,NotificatonCentre
+ 
+ *   MVC  *
+ 
+	-> Model is Data/Database
+	-> View is a User Interface
+	->Controller is mediator between Model and View 
+	-> controller contains business logics.
+	-> Model and view does not communucation directely
+ Advantages:-
+	-> Object Reuse
+	-> Independent Objects
+	
+ *  Singletone *
+	
+	-> only one instance of a class exits in entire application life cycle
+ 
+  Advantages :-
+	-> Singletone makes easy to share the data accross application
+	-> Memory allocate only once time
+	-> we can not create multiple objects
+	
+	Ex: class UserManager{
+	static var sharedUser:UserManager = UserManagr() // create instance of same class inside only so that we can access userName and phNo
+	var userName:String = ""
+	var phNo:Int=0
+	private init(){ //private because no one can create object from outside
+	
+	}
+	
+	}
+	
+	
+  *	Delegation *
+	-> is a process of assigning some work to another objects
+	-> Data passing from one object to another object
+	->delegation is one to one cummunication.
+	->
+	->Delegate object must be declared as weak to avoid retain cycle.
+	
+	RetainCycle:- RetainCycle is the process of two objects pointing strongly (Strong) each othes.
+				
+	
+
+
+	
+	
+	
+	
+	
+	
+   * 	Concurrency / Multitasking  / Parallay *
+   
+   1->  Concurrency is a process of excuteing multiple task as the same time 
+   
+   
+   ex: assume that i have two task t1 and t2 i want to excute t1 and t2 if you use normal mechanisum if you pass t1 first and t2 second the t1 is excute first and then t2 task 
+   
+   
+   i want excute tak t1 and t2 parally parally means switching task t1 and t2 this mechanisum is achived by Concurrency 
+   
+   
+   There are two types of Concurrency ()
+   
+   1-> Dispatch Queues (GCD)
+   2-> Operation Quesue
+   3-> Threads
+   
+   Why we use Concurrency:- better user experence ,perform any heavy tasks , handle some IO ,doing these kind of operations in the UIThread app Freeze , making non responsive  
+   
+   
+   on iphone 6 onward iphone has multcore procssor that allow to developer to excute multiple task in parallel.
+   
+   
+   * GCD  *
+   
+   1-> low level/karnal lavel/ unix lavel API .
+   2-> GCD is most commonly used API to manage concurent code excute operation asyncronsally at the unix lavel .
+   3-> GCD manage queue of task.
+   
+   * Dispatch Quesue * 
+   Dispatch Quesue are easy way to perform multiple task asyncronsally and concurently in your application.
+
+    Types of dq
+   1-> serial queue  : only one task excute at a time
+   we can excute task concurent by using multiple serial queue
+   
+   Advantages of serial queue: Guaranteed serialized access , predictable order tasks,
+   
+   2-> concurent queue :
+   multiple task in parallel wa,
+   will not know the order of excution.
+   dont hava to wait for each othe task.
+   
+   
+   basically to achived concurency use three mechanisum 1) GCD 2)Operation Q 3) Threads.
+   gcd and Operation q are internally they Threads, GCD has 5 Quesue one is Serial Q and 4 concurent q .
+   
+   By defults operting system provide single Serial Q and 4 Concurent q 
+   
+   The main dispatch queue is a globally avilable serial queue.
+   
+   it use to update the UI Component of app and perform all task related to the update of UIViews.
+   
+   There is only one task to be excuted at a time and this is why the UI is blocked when you run heavy task in the main queue.
+   
+   
+   The system provide 4 concurent Q  well call them Global Dispatch queues.
+   
+   These queue are global to application and are different only by priority level.
+   
+   
+   
+   
+   
+   * Diff Between GCD VC Operation Quesue
+   
+   GCD                 ||         Operation Q
+   
+   low lavel API       ||      High lavel API
+   
+   Concurent Excutions ||  Concurent Excutions but in an Object orinted fashion
+   
+   partial syncrones   ||  Highly ASync because it has no serial q
+   
+   No Depedency        ||  allow to set dependancy on operation.
+					   
+   Dont conform FIFO   ||   allow taks resume,cancel,restart.  				   
+					   
+   
+
+  * Diff Between Operation and 
+   
+
+
+
+
+
+
