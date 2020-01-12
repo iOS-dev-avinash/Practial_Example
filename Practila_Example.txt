@@ -219,10 +219,109 @@
 					   
    
 
-  * Diff Between Operation and 
+   * Practial Example *
    
+   1-> Dispatch queue
+  
+ Class ViewController:UIViewController {
+ 
+	viewDidLoad(){
+	
+	//task1();  task1 finish then task2
+	//task2();
+	
+	if you want to excute task1 along with task2 use concurent queue :excution  controll switching
+	
+	let queue = DispatchQueue.global(qos:.default)
+	queue.async{ [weak self] in 
+	
+	self.task1()
+	}
+	queue.async{ [weak self] in 
+	
+	self.task2()
+	}
+	
+	}
+	
+	func task1(){
+	for i in 1...50000{
+	print("task------1")
+	
+	/if you wnat to use user interface logic or update ui then use mainQue:
+	DispatchQueue.main.async{
+	
+	 use for  user interfce logic
+	  // 
+	}
+	}
+	}
+	
+	
+	}
+	func task1(){
 
+	print("task------2")
+	}
+	
+	
+	}
+	
+	
+ 
+ }
+   
+  2-> Operation Quesue
+  
+  
+Class ViewController:UIViewController {
+ 
+	viewDidLoad(){
+	
+	//task1();  task1 finish then task2
+	//task2();
+	
+	if you want to excute task1 along with task2 use concurent queue :excution  controll switching
+	
+	let queue = DispatchQueue.global(qos:.default)
+	queue.async{ [weak self] in 
+	
+	self.task1()
+	}
+	queue.async{ [weak self] in 
+	
+	self.task2()
+	}
+	
+	}
+	
+	func task1(){
+	for i in 1...50000{
+	print("task------1")
+	
+	/if you wnat to use user interface logic or update ui then use mainQue:
+	DispatchQueue.main.async{
+	
+	 use for  user interfce logic
+	  // 
+	}
+	}
+	}
+	
+	
+	}
+	func task1(){
 
+	print("task------2")
+	}
+	
+	
+	}
+	
+	
+ 
+ }
+   
 
 
 
