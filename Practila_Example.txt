@@ -422,7 +422,77 @@ let multiline = #"""
 	
 	
 	
-	
+	Interview Questions on iOS App and UIViewController Life Cycle
+
+What is AppDelegate class?
+AppDelegate is a class in iOS Application which is responsible to handling the application life cycle methods.
+
+What are the iOS Application Lifecycle Methods?
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool { }
+func applicationWillEnterForeground(_ application: UIApplication) { }
+func applicationDidBecomeActive(_ application: UIApplication) { }
+func applicationWillResignActive(_ application: UIApplication) {} 
+func applicationDidEnterBackground:(UIApplication *)application { }
+func applicationWillTerminate(_ application: UIApplication) { }
+
+What is launching options parameter dictionary in didFinishLaunchingWithOptions method?
+iOS application can be launched by tapping the app on the App icon, from other application and Notification etc. The launching options dictionary contains the information that is caused to the application launch.
+
+What are the Application States ?
+Not-Running: App is just installed into the device and not executing any code.
+Active: Application is in foreground and executing some code
+In-Active: Application is in foreground and not executing any code(Ex. Incoming calls, messages, reminders etc)
+Background: Application is in background and running some code.
+Suspended: Application is in background and not running any code (Sleep Mode).
+
+When the applicationWillTerminate method gets called?
+Application is in suspended state and other running applications in need of memory then the iOS system terminates the suspended apps in the background. This method gets called before the application gets terminated.
+
+What are the ViewController’s life cycle methods?
+open func loadView() // This is where subclasses should create their custom view hierarchy if they aren't using a nib. Should never be called directly.
+open func viewDidLoad()
+open func viewWillAppear(_ animated: Bool) // Called when the view is about to made visible. Default does nothing
+
+open func viewDidAppear(_ animated: Bool) // Called when the view has been fully transitioned onto the screen. Default does nothing
+
+open func viewWillDisappear(_ animated: Bool) // Called when the view is dismissed, covered or otherwise hidden. Default does nothing
+
+open func viewDidDisappear(_ animated: Bool)
+
+What is the UIApplicationDelegate ?
+UIApplicationDelegate is a protocol where all the application lifecycle methods are declared.
+
+What is the super class of AppDelegate?
+UIResponder
+
+Can we have multiple Windows in an iOS Application?
+Yes but Majority (99%) of the times we will have only one window.
+
+What is the class hierarchy of AppDelegate class?
+AppDelegate  UIResponder -> NSObject
+
+What is the class hierarchy of UIView ?
+UIView -> UIResponder -> NSObject
+
+What is the class hierarchy of UIButton ?
+UIButton -> UIControl -> UIView -> UIResponder -> NSObject
+
+What is the Root Class in iOS?
+NSObject
+
+How to Map / Connect UIElements to the ViewController?
+Use IBAction and IBOutlets to connect UIElements which are there in Storyboard to ViewController.swift class 
+
+What is @IBOutlet?
+IBOutlet is a keyword which is used to connect UIElement references to the UIElements in the storyboard
+
+What is @IBAction? 
+@IBAction is used to connect a ViewController’s method to the Active elements in the storyboard
+What is the weak keyword in declaration of an Outlet in VC?
+weak keyword avoids retain cycle.
+Can we use multiple storyboards in an Application?
+     Yes
+
 	
    
    
