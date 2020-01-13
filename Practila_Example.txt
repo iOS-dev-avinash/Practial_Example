@@ -421,6 +421,46 @@ let multiline = #"""
 	Provide Default Value
 	
 	
+	*  Memory Management  *
+	
+	memory management means how much time the object should be avilabel in a memory.
+	
+	memory management is handle by ARC  
+	
+	ARC is keep track of instance properties
+	
+	ARC is used for intilise deintialise system resources 
+	
+	when the class instance is no longer needed it automatically free the memory space by dinit() 
+	
+	Case to Handle by Developer 
+	
+	Person		       Pen       Person             Pen 
+        	--->strong 					--->strong
+			strong<---					weak--->
+			
+			
+    Retain Cycle:-	When two objects are pointing to eachother strongly,ARC cant find a way of released  them .in a situations Memory leaks happen.	
+	
+	* Strong  Property *
+	-> all references are strong by default
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	Interview Questions on iOS App and UIViewController Life Cycle
 
