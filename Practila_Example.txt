@@ -448,6 +448,38 @@ let multiline = #"""
 	
 	
 	
+	* Web Services *
+	
+	-> Web Services is a way of exchanging data over network between two or more application.
+	
+	->  Web Services is a way of interacting with remote web server 
+	
+	Process -> 1St --> prepare URL Request from clint side 2nd -> send Request by using URLSession or Almofire/AFNetworking 3rd--> server processes the request and pull data from database 4th--> Server send data/response if success or error if fail  to back to the application 5th-->clint processes the data (using NSJsonSerilazation/JSONDecoder/Codable)
+	
+	
+	The communication between clint and server happen two ways 
+	
+	Architecture at serverside
+	
+	1-> Restfull (Json/XML)(Light weight)(simple parse to data)
+	2-> SOAP (XML)(Heavy wight)
+	
+	URL Structure =- host name_ path_quary
+	
+	URLSession object create a session and takes a task as a parameters
+	creating session 
+	let session = URLSession.shared(Standard)
+	let session = URLSession.emphemerl(autheentication)
+	
+	Three different class for creating task 
+	
+	URLSessionDask
+	URLSessionDownloadTask
+	URLSessionUploadTask
+	
+	
+	
+
 	
 	
 	

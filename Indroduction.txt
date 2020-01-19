@@ -1,0 +1,37 @@
+  * introduction *
+  
+  Hi good morning
+  
+  I am avinash khairgave i am from nanded maharashtra,
+  
+
+ Regarding my work profile i am having a total of 3 years of experience in ios and ipad app development .
+ 
+ I have been working at FluidAI as software engineer from fab 2019 streaming ios application . from where i got exposure to software life cycle from requirement gathering till delivary with minumum time.
+
+ Moreover i have basic knoledge in hybrid app development using phonegap.
+ 
+ On the area of my project i am pointing FlashSDK Framework in swift 5 is used,purpose of project  
+   AI Avatar =-> A 24x7 intelligent human digital assistant that can make personalized recommendations and its  is “smart” enough to make recommendations to users and understand their usage patterns.What’s more it is face recognition enabled and can identify repeat users! 
+
+  The digital human is a first of its kind visual, voice, chat, call and text enabled humanification of a person. It looks, speaks and thinks like a human and is “smart” enough to make recommendations to users and understand their usage patterns. What’s more it is face recognition enabled and can identify repeat users! Can rest on the top of any apps, website or system. A 24x7 intelligent digital assistant that can make personalized recommendations and cross-sell/ up-sell products, give information etc.
+  
+  
+   --> i am pointing StockAxis App  its is a product based app for Investment Advisory to indian    Equitity for individuals. they will provide recommendations on the basis of fundamental and technical research of stocks .in app you can cheack your portfolio ,top 10 industrise, top 50 stocks,top  news,blogs and they provided some advisory services packges investment period. i developed this app  from scratch its has 10000+ downloader and 4.4 rating and this app is under top 50th rank in finicial ranking in appstore in india.
+  
+  --> SCGT Directory, SCGT is a Business application@G5WebServices.
+      SCGT is a Business application for business meeting and business deals.
+
+  --> SpotZero, SCGT is a Advertisement application@G5WebServices.
+      SpotZero is a Advertisement application for efficient cleaning solution for a quicker, more
+	  adaptive and multifaceted cleaning
+
+
+ 
+ --> As far as my qualification is concerned i secured BE graduation in ECE  from SRTMU Nanded in 2015 And a certification in “iOS and Android ” from CDAC, Mumbai after my graduation.
+ 
+ --> About my strengths,i am flexible and adoptable towards my work and enthusiasm to learn new things. i ma hard worker and work smart with respect to weakness,shyness was the one i faced earlier and now i was able to overcome it with confidence and passion towards work.
+
+--> Thnak you for the opportunity ,time and concern to know about me. 
+
+ 
