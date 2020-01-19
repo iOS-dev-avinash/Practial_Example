@@ -18,6 +18,18 @@
   
   
    --> i am pointing StockAxis App  its is a product based app for Investment Advisory to indian    Equitity for individuals. they will provide recommendations on the basis of fundamental and technical research of stocks .in app you can cheack your portfolio ,top 10 industrise, top 50 stocks,top  news,blogs and they provided some advisory services packges investment period. i developed this app  from scratch its has 10000+ downloader and 4.4 rating and this app is under top 50th rank in finicial ranking in appstore in india.
+   
+   these FlashSDK is used in folling projects
+   
+   -->FluidAI Infinity, AI based Android App@Emirates NBD
+      An Airline iOS AI project sold to client for 18K Euros.
+   -->NEO HR iOS App, AI based HR App @SocGen
+	  An HR Solution use cases.	
+   -->BizLabs Fintech2019, Competition Project @Aditya Birla
+      Winner of BizLabs FinTech 2019.Appused in the competition to represent AI use cases.
+   -->BOLT SURVEY, AI based survey App @J&J	 
+      Avatar based App to perform survey to give product recommendations.   
+
   
   --> SCGT Directory, SCGT is a Business application@G5WebServices.
       SCGT is a Business application for business meeting and business deals.
