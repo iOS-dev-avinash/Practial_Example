@@ -356,7 +356,7 @@ Class ViewController:UIViewController {
 
   * What is Diff Between Swift VC ObectiveC  *
   
-  1-> simple to read and learn
+  1->simple to read and learn
   2->Type Safe (no need to declare variable dataType its automatically );
   3->Less code
   4->No pointer to confuse
@@ -479,9 +479,26 @@ let multiline = #"""
 	
 	
 	
-
-	
-	
+  * Core Data *
+  
+  core data is a persistance store , it is object orinted
+  core data use internally SQLite 
+  Feature:- core data is an  faster 
+  
+  how core data work
+  
+  
+     Managed Object Context   <-----> Managed Object
+             |
+			 |
+      Persistance Store Coordinator
+			 |
+			 |	
+	    Persistance
+	        Store
+			 |
+			 |
+	  Managed Object Model(Sqlite/XML)		 
 	
 	
 	
@@ -569,9 +586,148 @@ Can we use multiple storyboards in an Application?
    
    
    
-   
+Why we use weak  
+whenever any class references is not used then it null or released memory like flush that the resion we used weak
+
+         *Delegate design pattern *
+
+
+import UIKit
+import PlaygroundSupport
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+//Thank you for downloading the code I hope this helps you in learning and implementing clean code in your project. Feel free to ask me any questions and do subscribe to the channel :) ~ CodeCat15
+
+protocol AdditionResultDelegate : class
+{
+    func didFinishAddingTwoNumbers(result: Int)
+}
+
+class Developer
+{
+    weak var managerReference: AdditionResultDelegate?
+
+    func developerWillAddTwoNumber(a: Int, b: Int)
+    {
+        let result = a + b
+        managerReference?.didFinishAddingTwoNumbers(result: result)
+    }
+}
+
+class Manager : AdditionResultDelegate
+{
+    var developer: Developer?
+
+    init(_developer: Developer) {
+        developer = _developer
+        developer?.managerReference = self
+    }
+
+    func didFinishAddingTwoNumbers(result: Int)
+    {
+        debugPrint("result of addition = \(result)")
+    }
+
+    func addTwoNumber(x: Int, y: Int)
+    {
+        developer?.developerWillAddTwoNumber(a: x, b: y)
+    }
+}
+
+let objManager = Manager(_developer: Developer())
+objManager.addTwoNumber(x: 10, y: 10)
+
+
+		 
+  
+  
+  
+  
+  /* Disadvantages Of Singletone  Patern */
+  
+  -> One frequent concern with singletons is that often they’re not thread safe 
+  as singletons are often used from multiple controllers accessing 
+  the singleton instance at the same time. 
+  import Foundation
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution = true
+
+var value: Int = 2
+
+let concurrentQueue = DispatchQueue(label: "queue", attributes: .concurrent)
+
+concurrentQueue.async {
+    for i in 0...3 {
+        value = i
+        print("\(value) ✴️")
+    }
+}
+
+concurrentQueue.async {
+    for j in 4...6 {
+        value = j
+        print("\(value) ✡️")
+    }
+}
+
+concurrentQueue.async {
+    value = 9
+    print(value)
+}
+
+concurrentQueue.async {
+    value = 14
+    print(value)
+}
+
+out put = 4 4 9 1
+
+ In this example, multiple threads trying to manipulate value variable at
+ the same time and because of that wrong value is getting printed.
+ 
+ This is a race condition or classic readers writers problem where blocks on many queues 
+ are trying to modify mutable value. As a result of this it’s printing wrong value in block. 
+ Singletons create hidden dependencies.
+ 
+ 
+ 
   
   
   
   
   
+ What's the difference between custom class and file's owner setting in xib file?
+ 
+ 
+ 
+ We can see that File's Owner object is one of the most important objects in a nib file, and File's Owner is a placeholder object,
+ and is NOT created when the nib file is loaded. File's Owner object must be created by yourself and
+ you need to pass it to the nib-loading code to recreate the link of the code and the contents of a nib file.
+ We can tell the File's Owner object can be NSObject in the Xcode and
+ when you link your UI elements with your code (most of the time it is the ViewController class), 
+ the File's Owner object is specified (and it is your ViewController instance).
+ 
+ 
+ 
+ 
+ Whats new in swift 5
+ 
+ 1. ABI Stability
+ ABI stands for Application Binary Interface.
+It enables binary compatibility between apps and libraries compiled with different Swift versions.
+So far every iOS application ships its own Swift version.
+ This is because Swift isn’t available as a part of the iOS itself.
+ 
+ 2. Raw Strings Literals
+ 
+ 3. Integer Multiples  
+ if myNumber % 2 == 0 {
+    print("number is multiple of 2")
+}
+ 
+ 4. Flatten Optional try?  let messages = try? person?.getName()
+ 
+ 5.Handle Future Enum cases
+ 
+ 
