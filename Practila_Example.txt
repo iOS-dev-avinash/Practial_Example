@@ -784,6 +784,49 @@ mutating func changeTeam(newTeamName : String){
     
 }
 
+//* Escaping vs Non Escaping Closures  *//
+
+   @escape : keyword to indicate that the closers will be called after some 
+    time of control came out of method.
+   
+   @nonescape : A closers which is passed as an argument to a method
+               That closers gets called before the excution control comes 
+                out of the method is called non-escape closure.
+
+   By Default all closers are non-escaping closure.
+   
+   
+   Example :
+   
+   class Closures {
+   
+   var someValue = 10
+   
+   func methodThatExceprts(completion:(int,int)->Int){
+   
+   let result = completion(10,20);
+   
+    print(result)
+	
+   }
+   
+   func callClosure(){
+      methodThatExceprts{ [weak safe] (a,b) -> Int in
+	   self.someValue = 20
+	   return a + b
+	   
+	  
+	  }
+   }
+   
+   
+    
+   
+   }
+   
+   				
+	
+ 
  
  
  
