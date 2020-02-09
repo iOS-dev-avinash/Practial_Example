@@ -731,3 +731,15 @@ So far every iOS application ships its own Swift version.
  5.Handle Future Enum cases
  
  
+ 
+ * What is Weak:
+ Weak keyword does not increase the reference count of the object 
+ weak keyword avoids retain cycle.
+ whenever any class references is not used then it null or released memory like flush that the resion we used weak
+ 
+ exp :
+ let bMobile = Moblie()
+ let aMoblie = Mobile()
+ 
+ 
+ 
