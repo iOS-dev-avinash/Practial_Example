@@ -738,8 +738,53 @@ So far every iOS application ships its own Swift version.
  whenever any class references is not used then it null or released memory like flush that the resion we used weak
  
  exp :
- let bMobile = Moblie()
- let aMoblie = Mobile()
+ let aMobile = Moblie()
+ let bMoblie = aMobile
+ 
+ 
+ 
+ 
+ 
+ */ How to access private variable of a class out side?
+ == You can acess private variable Using KVC  
+ 
+ 
+ Class Mobile:NSObject {
+	private var model:Int = 2018;
+ }
+ 
+ let myMobile = Mobile()
+ myMobile.model = 2019 // it gives error private member can not access out side  class
+ myMobile.value(forKey:"model")
+ myMobile.setValue("2019",forKey:"model");
+ 
+ 
+ 
+ /*                                  */
+
+	As Structures are of value type we
+	cannot modify the properties directly.
+The compiler also helps us with the possible solution
+
+It clearly states that adding mutating keyword to 
+any function in value type can enable them to modify the variable.
+
+Example:
+
+struct Employee {
+    var name : String
+    var teamName : String
+init(name: String, teamName: String) {
+        self.name = name
+        self.teamName = teamName
+    }
+mutating func changeTeam(newTeamName : String){
+        self.teamName = newTeamName
+    }
+    
+}
+
+ 
  
  
  
