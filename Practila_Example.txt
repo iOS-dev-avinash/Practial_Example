@@ -826,6 +826,30 @@ mutating func changeTeam(newTeamName : String){
    
    				
 	
+	/*    Why Choose Struct Over Class?   */
+
+1-> Effiency : value type are faster    than reference ,beacuse reference type as they are allocated on heap memory,
+which is expensive compared to stack memory allocation.ALSO in order to free up the allocated memory os need to keep track of reference count and when count is zero the memory is freed.
+				
+2--> Thread Safety : Value type istances are safe in a multi-Threaded environment as Whith out having to worry about the race conditions or deadlocks.
+
+3--> No memory leaks : Value types have no reference unlike reference type. Hence there is no overhead of memory leaks in value types.				
+	
+When to use?
+Use a value type when:
+
+  --> you want copies to have independent state 
+  
+  --> The data will be used in code across multiple Threads  .
+Use a reference type When:
+
+  --> You want to create shared,mutable state.
+  
+ 
+ 
+ 
+ 
+ 
  
  
  
